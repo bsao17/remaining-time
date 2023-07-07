@@ -2,13 +2,13 @@
  * Prototype Javascript script for futur Chrome Extension
  */
 
-let time = document.querySelector("#time")
-let article_size = document.querySelector("#article").textContent.trim()
-let article_words = article_size.split(" ")
-let time_array = []
+const time = document.querySelector("#time")
+const article_size = document.querySelector("#article").textContent.trim()
+const article_words = article_size.split(" ")
+const time_array = []
 
 
-const words_request = (article)=>{
+const words_recover = (article)=>{
     article_words.forEach((word)=>{
         if(!word.replace("/\s/g")){
             return
@@ -16,7 +16,7 @@ const words_request = (article)=>{
             time_array.push(word)
         }
     })
-    console.log(time_array)
+    return time_array
 }
 
 const create_time_remaining_div = (words_array) => {
@@ -26,6 +26,5 @@ const create_time_remaining_div = (words_array) => {
     time.append(time_remain)
 } 
     
-
-words_request(article_size)
+words_recover(article_size)
 create_time_remaining_div(time_array)
