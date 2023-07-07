@@ -21,6 +21,7 @@ const words_request = (article)=>{
 
 const create_time_remaining_div = (words_array) => {
     time_remain = document.createElement("span")
+    time_remain.className = "text-danger"
     time_remain.innerHTML = ` Between ${time_array.length / 300 * 60} & ${time_array.length / 200 * 60} secondes`
     time.append(time_remain)
 } 
